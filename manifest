@@ -1,77 +1,187 @@
-#ExampleModule
-#Tue May 01 20:52:13 UTC 2018
+# tfsites.NormalizeTfDnaAffinityData formerly tfsites.defineTFBindingSites.from.PBM 
+#Mon Aug 21 20:23:30 UTC 2023
 JVMLevel=
-LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00374\:3.0
-author=Edwin F. Juarez;UCSD - Mesirov Lab
-categories=administration
-#commandLine when run with source in Docker container:
-commandLine=/ExampleModule/ExampleModule.py -f <filename> -a <add_custom_message> -m <message_to_add> -o <output_filename>
-#commandLine when run with source in module zip/taskLib:
-#commandLine=<python_3.6> <libdir>ExampleModule.py -f <filename> -a <add_custom_message> -m <message_to_add> -o <output_filename>
-job.docker.image=genepattern/example-module:2
-src.repo=https://github.com/genepattern/ExampleModule/tree/v3
+LSID=urn\:lsid\:genepattern.org\:module.analysis\:00470
+author=Joe Solvason
+commandLine=python /build/tfsites-webportal/05-mapTfDnaInteractions/05-mapTfDnaInteractions.py -t <tfsite.name> -c <cif.file> -k <keep.chains> -a <aa.number.adjuster> -d <direct.hbond.distance>  -f <alpha.fold> -w <plot.width> -H <plot.height> -l <aa.label.text.size> -p <output.plot.format> -n <output.filename> -D .         
 cpuType=any
-description=This is an example GenePattern module written in Python 3. It can be used as a template for future modules. It reads a file and potentially adds a line of text
-documentationUrl=https://genepattern.github.io/ExampleModule/v3/
-fileFormat=txt
-language=Python
-name=ExampleModule
+description=tfsites.MapTfDnaInteractions maps the crystal structure for a transcription factor.
+documentationUrl=https://genepattern.github.io/tfsites.NormalizeTfDNAAffinityData/v2/
+fileFormat=
+job.cpuCount=
+job.docker.image=genepattern/tfsites\:0.13
+job.memory=
+job.walltime=
+language=any
+name=tfsites.NormalizeTfDNAAffinityData
 os=any
 p1_MODE=IN
 p1_TYPE=FILE
 p1_default_value=
-p1_description=The file to be read
-p1_fileFormat=txt
-p1_flag=-f
-p1_name=filename
-p1_numValues=0..1
+p1_description=File containing the raw affinity dataset.
+p1_fileFormat=.cif
+p1_flag=
+p1_name=cif.file
+p1_numValues=1..1
 p1_optional=
 p1_prefix=
 p1_prefix_when_specified=
 p1_type=java.io.File
 p1_value=
+
+
 p2_MODE=
 p2_TYPE=TEXT
-p2_default_value=False
-p2_description=Whether or not to add a custom message
+p2_default_value=<cif.file_basename>_
+p2_description=Base name of the output files.
 p2_fileFormat=
-p2_flag=-a
-p2_name=add_custom_message
+p2_flag=
+p2_name=output.filename
 p2_numValues=0..1
 p2_optional=
 p2_prefix=
 p2_prefix_when_specified=
 p2_type=java.lang.String
-p2_value=False\=False;True\=True
+p2_value=
+
+
 p3_MODE=
 p3_TYPE=TEXT
 p3_default_value=
-p3_description=What message to add (if any)
+p3_description=Name of the transcription factor
 p3_fileFormat=
-p3_flag=-m
-p3_name=message_to_add
-p3_numValues=0..1
+p3_flag=
+p3_name=tf.name
+p3_numValues=1..1
 p3_optional=
 p3_prefix=
 p3_prefix_when_specified=
 p3_type=java.lang.String
 p3_value=
+
 p4_MODE=
 p4_TYPE=TEXT
-p4_default_value=
-p4_description=The basename to use for output file (no need to add ".txt" at the end)
+p4_default_value=ABE
+p4_description=keep chains??
 p4_fileFormat=
-p4_flag=-o
-p4_name=output_filename
-p4_numValues=0..1
+p4_flag=
+p4_name=keep.chains
+p4_numValues=1..1
 p4_optional=
 p4_prefix=
 p4_prefix_when_specified=
-p4_type=java.lang.String
+p4_type=java.lang.Integer
 p4_value=
+
+
+p5_MODE=
+p5_TYPE=Integer
+p5_default_value=170
+p5_description=aa.number.adjuster??
+p5_fileFormat=
+p5_flag=
+p5_name=aa.number.adjuster
+p5_numValues=1..1
+p5_optional=
+p5_prefix=
+p5_prefix_when_specified=
+p5_type=java.lang.Integer
+p5_value=
+
+
+p6_MODE=
+p6_TYPE=Integer
+p6_default_value=3.5
+p6_description=If True, a header exists in the PBM data file. If False, no header exists.
+p6_fileFormat=
+p6_flag=
+p6_name=direct.hbond.distance
+p6_numValues=0..1
+p6_optional=
+p6_prefix=
+p6_prefix_when_specified=
+p6_type=java.lang.Integer
+p6_value=
+
+
+p7_MODE=
+p7_TYPE=TEXT
+p7_default_value=FALSE
+p7_description=If True, alpha.fold???
+p7_fileFormat=
+p7_flag=
+p7_name=alpha.fold
+p7_numValues=0..1
+p7_optional=
+p7_prefix=
+p7_prefix_when_specified=
+p7_type=java.lang.String
+p7_value=FALSE\=FALSE;TRUE\=TRUE
+
+
+p8_MODE=
+p8_TYPE=Integer
+p8_default_value=10
+p8_description=plot.width??
+p8_fileFormat=
+p8_flag=
+p8_name=plot.width
+p8_numValues=0..1
+p8_optional=
+p8_prefix=
+p8_prefix_when_specified=
+p8_type=java.lang.Integer
+p8_value=
+
+
+p9_MODE=
+p9_TYPE=Integer
+p9_default_value=20
+p9_description=plot.height??
+p9_fileFormat=
+p9_flag=
+p9_name=plot.height
+p9_numValues=0..1
+p9_optional=
+p9_prefix=
+p9_prefix_when_specified=
+p9_type=java.lang.Integer
+p9_value=
+
+p10_MODE=  
+p10_TYPE=Integer
+p10_default_value=9
+p10_description=aa.label.text.size??
+p10_fileFormat=
+p10_flag=
+p10_name=aa.label.text.size
+p10_numValues=0..1
+p10_optional=
+p10_prefix=
+p10_prefix_when_specified=
+p10_type=java.lang.Integer
+p10_value=
+
+p11_MODE=
+p11_TYPE=TEXT
+p11_default_value=png
+p11_description=output.plot.format??
+p11_fileFormat=
+p11_flag=
+p11_name=output.plot.format
+p11_numValues=0..1
+p11_optional=
+p11_prefix=
+p11_prefix_when_specified=
+p11_type=java.lang.Integer
+p11_value=
+
+
+
 privacy=public
-quality=production
+quality=development
+src.repo=https://github.com/genepattern/tfsites.MapTfDNAInteractions
 taskDoc=
-taskType=administration
-userid=bhill@broadinstitute.org
-version=Updated to use GitHub Pages doc url rather than doc.html
+taskType=Transcription factor analysis
+userid=ted
+version=Draft initial release
