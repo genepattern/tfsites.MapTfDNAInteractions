@@ -1,0 +1,18 @@
+# # ant -f ${GPUNIT_HOME}/build.xml -Dgpunit.diffStripTrailingCR="--strip-trailing-cr" -Dgp.host="beta.genepattern.org" -Dgp.url="https://beta.genepattern.org" -Dgp.user="**USERNAME**" -Dgp.password="**PUT_PASSWORD_HERE" -Dgpunit.testfolder=`pwd` gpunit
+name: simple_test
+# description: created from job 96244
+# ET(ms): 172000# from server:  https://beta.genepattern.org/gp/
+module: tfsites.MapTfDNAInteractions
+params: 
+    "pdb.or.cif.file": "data/05-input_structure_addH.pdb"
+    "tf.name": "1pue"
+    "keep.chains": "ABE"
+    "TF.affinity.files": ["inputs/03-input_ets1-pbm.tsv","inputs/03-input_hoxa13-pbm.tsv"]
+    "aa.number.adjuster": "170"
+    "direct.hbond.distance": "3.5"
+    "alpha.fold": "FALSE"
+    "add.hydrogens": "true"
+    "model.number": "1"
+    "output.filename": "<pdb.or.cif.file_basename>"
+assertions: 
+    jobStatus: success
