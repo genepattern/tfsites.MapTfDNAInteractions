@@ -27,7 +27,6 @@
         "description": "",
         "hidden": false,
         "parameters": [
-                "output.plot.format",
 		"plot.width",
                 "plot.height",
                 "aa.label.text.size"

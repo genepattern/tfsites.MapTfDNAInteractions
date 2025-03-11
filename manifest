@@ -3,7 +3,7 @@
 JVMLevel=
 LSID=urn\:lsid\:genepattern.org\:module.analysis\:00470
 author=Joe Solvason
-commandLine=/build/tfsites-webportal/05-mapTfDnaInteractions-wrapper.sh -t <tf.name> -p <pdb.or.cif.file> -k <keep.chains> -a <aa.number.adjuster> -d <direct.hbond.distance>  -f <alpha.fold> -w <plot.width> -H <plot.height> -l <aa.label.text.size> -p <output.plot.format> -n <output.filename> -D . -A <add.hydrogens> -m <model.number>
+commandLine=/build/tfsites-webportal/05-mapTfDnaInteractions-wrapper.sh -t <tf.name> -p <pdb.or.cif.file> -k <keep.chains> -a <aa.number.adjuster> -d <direct.hbond.distance>  -f <alpha.fold> -w <plot.width> -H <plot.height> -l <aa.label.text.size>  -n <output.filename> -D . -A <add.hydrogens> -m <model.number>
 cpuType=any
 description=tfsites.MapTfDnaInteractions maps the crystal structure for a transcription factor.
 documentationUrl=https://genepattern.github.io/tfsites.NormalizeTfDNAAffinityData/v2/
@@ -164,45 +164,31 @@ p10_value=
 
 p11_MODE=
 p11_TYPE=TEXT
-p11_default_value=png
-p11_description=output.plot.format??
+p11_default_value=false
+p11_description=If True, add hydrogens???
 p11_fileFormat=
 p11_flag=
-p11_name=output.plot.format
+p11_name=add.hydrogens
 p11_numValues=0..1
 p11_optional=
 p11_prefix=
 p11_prefix_when_specified=
-p11_type=java.lang.Integer
-p11_value=
+p11_type=java.lang.String
+p11_value=false\=false;true\=true
 
 p12_MODE=
-p12_TYPE=TEXT
-p12_default_value=false
-p12_description=If True, add hydrogens???
+p12_TYPE=Integer
+p12_default_value=1
+p12_description=model.number??
 p12_fileFormat=
 p12_flag=
-p12_name=add.hydrogens
+p12_name=model.number
 p12_numValues=0..1
 p12_optional=
 p12_prefix=
 p12_prefix_when_specified=
-p12_type=java.lang.String
-p12_value=false\=false;true\=true
-
-p13_MODE=
-p13_TYPE=Integer
-p13_default_value=1
-p13_description=model.number??
-p13_fileFormat=
-p13_flag=
-p13_name=model.number
-p13_numValues=0..1
-p13_optional=
-p13_prefix=
-p13_prefix_when_specified=
-p13_type=java.lang.Integer
-p13_value=
+p12_type=java.lang.Integer
+p12_value=
 
 
 privacy=public
