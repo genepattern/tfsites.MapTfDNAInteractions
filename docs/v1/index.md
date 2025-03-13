@@ -29,9 +29,9 @@ This module takes a TF-DNA crystal structure as input and reports all hydrogen b
 
 | Name | Description <!--short description--> | Default Value |
 ---------|--------------|----------------
-| pdb or cif file * |  File containing the TF-DNA crystal structure |
-| output filename * | The basename to use for output visualization file  |
-| tf name *  | Name of the transcription factor to use for crystal structure analysis |
+| pdb or cif file * |  File containing the TF-DNA crystal structure. |
+| output filename * | The basename to use for output visualization file.  |
+| tf name *  | Name of the transcription factor to use for crystal structure analysis. |
 | keep chains | Only one protein chain and 2 strands of DNA (forward and reverse) can be analyzed at once. Use this option to select the chains to analyze if there are additional chains in the file. For example, if the structure is a dimer you must analyze one monomer at a time. Let's assume the two monomer proteins make up chains A and B, and two DNA molecules C and D. You will run the program once with chains "ACD" and once with "BCD". | All |
 | aa number adjuster | This will add all amino acid positions by this number. If you are inputting a PDB-formatted file, you do not need to use this parameter. If you are inputting an mmCIF file outputted from AlphaFold, then you can enter the starting position of the DNA binding domain here. For example, if the full-sized protein is 500 amino acids long, but you only fold the inner 50-350 amino acids, you can set aa_number_adjuster to 50 to correct the amino acid number. | 0 |
 | direct hbond distance | The number of angstroms allowed between a hydrogen bond donor and acceptor to predict a hydrogen bond exists. For crystal structures generated from real data, 3.5 angstroms is common. If the structure was generated from AlphaFold, you can go as high as 5 angstroms. | 3.5 |
@@ -68,7 +68,7 @@ SVG Output: [Example file](https://github.com/jsolvason/tfsites-webportal/blob/g
 ## Requirements
 <!--This section is typically used to list any special requirements for running the module, such as, language/operating system requirements and Docker images. -->
 
-Requires the [genepattern/example-module:2 Docker image](https://hub.docker.com/layers/150060459/genepattern/example-module/2/images/sha256-ae4fffff67672e46b251f954ad226b7ad99403c456c1c19911b6ac82f1a27f2f?context=explore).
+Requires the [genepattern/tfsites:15.5.1 or later Docker image](https://hub.docker.com/r/genepattern/tfsite)).
 
 ## License
 
