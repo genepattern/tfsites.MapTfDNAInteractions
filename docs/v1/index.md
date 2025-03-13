@@ -68,7 +68,7 @@ SVG Output: [Example file](https://github.com/jsolvason/tfsites-webportal/blob/g
 ## Requirements
 <!--This section is typically used to list any special requirements for running the module, such as, language/operating system requirements and Docker images. -->
 
-Requires the [genepattern/tfsites:15.5.1 or later Docker image](https://hub.docker.com/r/genepattern/tfsite)).
+Requires the [genepattern/tfsites:15.5.1 or later Docker image](https://hub.docker.com/r/genepattern/tfsites).
 
 ## License
 
