@@ -174,7 +174,7 @@ p11_optional=
 p11_prefix=
 p11_prefix_when_specified=
 p11_type=java.lang.String
-p11_value=false\=false;true\=true
+p11_value=FALSE\=FALSE;true\=TRUE
 
 p12_MODE=
 p12_TYPE=Integer
